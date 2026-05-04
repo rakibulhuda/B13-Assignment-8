@@ -92,7 +92,7 @@ export default function ProfilePage() {
         <div className="card" style={{ padding:"1.5rem" }}>
           <h3 style={{ fontSize:".95rem", fontWeight:600, color:"var(--c-text)", marginBottom:"1rem" }}>Quick Actions</h3>
           <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(130px,1fr))", gap:10 }}>
-            {[["📚","Browse Library","/books","#7c6af7"],["✏️","Edit Profile","/profile/update","#06b6d4"],["💻","Tech Books","/books?category=Tech","#f59e0b"]].map(([ic,l,h,c])=>(
+            {[["📚","Browse Library","/books","#7c6af7"],["✏️","Edit Profile","/profile/update","#06b6d4"]].map(([ic,l,h,c])=>(
               <Link key={String(l)} href={String(h)} style={{ textDecoration:"none" }}>
                 <div style={{ display:"flex",flexDirection:"column",alignItems:"center",gap:7,padding:"1rem .75rem",borderRadius:10,background:`${c}0d`,border:`1px solid ${c}22`,cursor:"pointer",transition:"transform .2s,border-color .2s",textAlign:"center" }}
                   onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.transform="translateY(-3px)";(e.currentTarget as HTMLElement).style.borderColor=String(c);}}

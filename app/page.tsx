@@ -8,7 +8,6 @@ import BookCard from "@/components/BookCard";
 import { useSession } from "@/lib/auth-client";
 import { Book } from "@/types/book";
 
-/* ── Animated counter hook ── */
 function useCounter(target: number, duration = 1800, start = false) {
     const [count, setCount] = useState(0);
     useEffect(() => {
@@ -27,18 +26,15 @@ function useCounter(target: number, duration = 1800, start = false) {
     return count;
 }
 
-/* ── Stat card ── */
 function StatCard({ value, suffix, label, icon, delay }: { value: number; suffix: string; label: string; icon: string; delay: number }) {
     const ref = useRef<HTMLDivElement>(null);
     const [visible, setVisible] = useState(false);
     const count = useCounter(value, 1600, visible);
-
     useEffect(() => {
         const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } }, { threshold: 0.5 });
         if (ref.current) obs.observe(ref.current);
         return () => obs.disconnect();
     }, []);
-
     return (
         <div ref={ref} className="card fade-up" style={{ padding: "2rem 1.5rem", textAlign: "center", animationDelay: `${delay}s` }}>
             <div style={{ fontSize: "2.2rem", marginBottom: 12 }}>{icon}</div>
@@ -84,29 +80,47 @@ export default function Home() {
     return (
         <div style={{ fontFamily: "'Inter', sans-serif" }}>
 
-            {/* ════════ HERO ════════ */}
+            {/* HERO */}
             <section style={{
                 position: "relative", overflow: "hidden",
                 padding: "clamp(5rem, 12vw, 9rem) 0 clamp(4rem, 8vw, 7rem)",
                 background: "radial-gradient(ellipse 90% 70% at 60% 0%, rgba(79,57,246,.18) 0%, transparent 65%), radial-gradient(ellipse 60% 50% at 10% 80%, rgba(149,20,250,.12) 0%, transparent 60%), var(--c-bg)",
             }}>
-                {/* subtle grid */}
                 <div style={{ position: "absolute", inset: 0, opacity: .035, backgroundImage: "linear-gradient(var(--c-border-purple) 1px,transparent 1px),linear-gradient(90deg,var(--c-border-purple) 1px,transparent 1px)", backgroundSize: "52px 52px", pointerEvents: "none" }} />
 
                 <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
                     <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "3rem", alignItems: "center" }} className="hero-grid">
+
                         {/* Left */}
                         <div style={{ maxWidth: 580 }}>
-              <span className="fade-up" style={{
-                  display: "inline-flex", alignItems: "center", gap: 7,
-                  padding: "5px 13px", borderRadius: 99,
-                  fontSize: ".72rem", fontWeight: 700, letterSpacing: ".06em", textTransform: "uppercase",
-                  color: "#c4b5fd", background: "rgba(79,57,246,.14)", border: "1px solid rgba(79,57,246,.3)",
-                  marginBottom: "1.4rem",
-              }}>
-                <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#a78bfa" }} />
-                Digital Library Platform
-              </span>
+                            <span className="fade-up" style={{
+                                display: "inline-flex", alignItems: "center", gap: 8,
+                                padding: "5px 13px", borderRadius: 99,
+                                fontSize: ".72rem", fontWeight: 700, letterSpacing: ".06em", textTransform: "uppercase",
+                                color: "#c4b5fd", background: "rgba(79,57,246,.14)", border: "1px solid rgba(79,57,246,.3)",
+                                marginBottom: "1.4rem",
+                            }}>
+                                {/* Ping dot */}
+                                <span style={{ position: "relative", width: 10, height: 10, flexShrink: 0, display: "inline-block" }}>
+                                    <span style={{
+                                        position: "absolute", inset: 0,
+                                        borderRadius: "50%",
+                                        background: "#39c88c",
+                                        opacity: 0.75,
+                                        animation: "ping 1.2s cubic-bezier(0,0,0.2,1) infinite",
+                                    }} />
+                                    <span style={{
+                                        position: "absolute",
+                                        top: "50%", left: "50%",
+                                        transform: "translate(-50%, -50%)",
+                                        width: 6, height: 6,
+                                        borderRadius: "50%",
+                                        background: "rgba(57,176,200,0.93)",
+                                        display: "block",
+                                    }} />
+                                </span>
+                                Digital Library Platform
+                            </span>
 
                             <h1 className="serif fade-up d1" style={{
                                 fontSize: "clamp(2.6rem, 5.5vw, 4.2rem)",
@@ -151,14 +165,11 @@ export default function Home() {
                                     <p style={{ color: "rgba(255,255,255,.6)", fontSize: ".75rem", marginTop: 3 }}>Elara Voss</p>
                                 </div>
                             </div>
-                            {/* Back shadow card */}
                             <div style={{ position: "absolute", inset: 0, borderRadius: 18, background: "var(--c-surface)", border: "1px solid var(--c-border)", zIndex: -1, transform: "rotate(4deg)" }} />
-                            {/* Chip top */}
                             <div className="glass" style={{ position: "absolute", top: -14, right: -18, borderRadius: 10, padding: "8px 12px", textAlign: "center" }}>
                                 <div className="grad-text" style={{ fontSize: ".95rem", fontWeight: 800 }}>4.9 ★</div>
                                 <div style={{ fontSize: ".68rem", color: "var(--c-muted)" }}>Top Rated</div>
                             </div>
-                            {/* Chip bottom */}
                             <div className="glass" style={{ position: "absolute", bottom: -16, left: -20, borderRadius: 10, padding: "8px 12px" }}>
                                 <div style={{ fontSize: ".7rem", fontWeight: 700, color: "#06b6d4" }}>📖 New Arrival</div>
                                 <div style={{ fontSize: ".67rem", color: "var(--c-muted)", marginTop: 2 }}>12 books this week</div>
@@ -168,19 +179,19 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ════════ MARQUEE ════════ */}
+            {/* MARQUEE */}
             <div className="marquee-outer">
                 <div className="marquee-inner">
                     {[...MARQUEE, ...MARQUEE].map((t, i) => (
                         <span key={i} className="marquee-item">
-              <span className="dot" />
+                            <span className="dot" />
                             {t}
-            </span>
+                        </span>
                     ))}
                 </div>
             </div>
 
-            {/* ════════ FEATURED BOOKS ════════ */}
+            {/* FEATURED BOOKS */}
             <section className="section">
                 <div className="wrap">
                     <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "2.5rem", gap: "1rem", flexWrap: "wrap" }}>
@@ -188,11 +199,8 @@ export default function Home() {
                             <span className="label" style={{ color: "var(--c-primary)" }}>Curated for You</span>
                             <h2 className="serif" style={{ fontSize: "clamp(1.6rem,3.5vw,2.4rem)", fontWeight: 700, color: "var(--c-text)" }}>Featured Books</h2>
                         </div>
-                        <Link href="/books" className="btn btn-ghost" style={{ padding: ".55rem 1.2rem", fontSize: ".85rem" }}>
-                            View All →
-                        </Link>
+                        <Link href="/books" className="btn btn-ghost" style={{ padding: ".55rem 1.2rem", fontSize: ".85rem" }}>View All →</Link>
                     </div>
-
                     {loading ? (
                         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(210px,1fr))", gap: 20 }}>
                             {[...Array(4)].map((_,i) => <div key={i} className="shimmer" style={{ height: 300 }} />)}
@@ -205,7 +213,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ════════ STATS ════════ */}
+            {/* STATS */}
             <section className="section-sm" style={{ background: "var(--c-surface)", borderTop: "1px solid var(--c-border)", borderBottom: "1px solid var(--c-border)" }}>
                 <div className="wrap">
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))", gap: 16 }}>
@@ -217,7 +225,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ════════ CATEGORIES ════════ */}
+            {/* CATEGORIES */}
             <section className="section">
                 <div className="wrap">
                     <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
@@ -248,7 +256,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ════════ TESTIMONIALS ════════ */}
+            {/* TESTIMONIALS */}
             <section className="section" style={{ background: "var(--c-surface)", borderTop: "1px solid var(--c-border)", borderBottom: "1px solid var(--c-border)" }}>
                 <div className="wrap">
                     <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
@@ -278,7 +286,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ════════ CTA ════════ */}
+            {/* CTA */}
             <section className="section">
                 <div className="wrap">
                     <div style={{
@@ -305,10 +313,14 @@ export default function Home() {
             </section>
 
             <style>{`
-        @media (max-width: 820px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
+                @media (max-width: 820px) {
+                    .hero-grid { grid-template-columns: 1fr !important; }
+                }
+                @keyframes ping {
+                    75%, 100% { transform: scale(2); opacity: 0; }
+                }
+            `}</style>
+
         </div>
     );
 }
