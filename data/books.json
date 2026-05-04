@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "title": "The Midnight Algorithm",
+    "author": "Sophia Reeves",
+    "description": "A gripping thriller where a programmer discovers a sentient algorithm embedded in a global financial system. Racing against time, she must decide whether to expose or protect it—before it exposes her. A page-turner that blurs the line between human and machine.",
+    "category": "Tech",
+    "available_quantity": 4,
+    "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "2",
+    "title": "Whispers of the Forgotten Shore",
+    "author": "Elara Voss",
+    "description": "A sweeping saga of love, loss, and redemption set against the backdrop of a crumbling coastal empire. When a lighthouse keeper discovers a century-old letter, the secrets it contains will change her family forever.",
+    "category": "Story",
+    "available_quantity": 7,
+    "image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "3",
+    "title": "Quantum Minds",
+    "author": "Dr. Lian Cho",
+    "description": "An accessible deep dive into quantum computing and its implications for artificial intelligence. Dr. Cho breaks down complex principles—superposition, entanglement, decoherence—into vivid analogies that make the future feel tangible and urgent.",
+    "category": "Science",
+    "available_quantity": 3,
+    "image_url": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "4",
+    "title": "The Last Repository",
+    "author": "Marcus Linde",
+    "description": "In a dystopian future where all digital knowledge is controlled by a single corporation, a rogue developer maintains the last open-source server. A thought-provoking novel about freedom, code, and what we owe each other.",
+    "category": "Tech",
+    "available_quantity": 5,
+    "image_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "5",
+    "title": "Echoes in the Dark Matter",
+    "author": "Prof. Nadia Solano",
+    "description": "A stunning exploration of dark matter, dark energy, and the invisible forces shaping our cosmos. Solano weaves cutting-edge research with philosophical inquiry, asking: if 95% of the universe is hidden, what does that mean for how we understand reality?",
+    "category": "Science",
+    "available_quantity": 6,
+    "image_url": "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "6",
+    "title": "The Cartographer's Daughter",
+    "author": "Isabelle Fontaine",
+    "description": "A historical adventure following a young woman who inherits her father's map shop in 1890s Paris. Hidden within the maps are clues to a lost city—and a conspiracy that stretches across continents. Rich, atmospheric, and utterly absorbing.",
+    "category": "Story",
+    "available_quantity": 9,
+    "image_url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "7",
+    "title": "Neural Pathways",
+    "author": "Dr. Arjun Mehta",
+    "description": "The definitive guide to understanding how modern neural networks actually learn. Dr. Mehta demystifies backpropagation, attention mechanisms, and transformer architecture with clarity and wit. Essential reading for anyone building the next generation of AI.",
+    "category": "Tech",
+    "available_quantity": 2,
+    "image_url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "8",
+    "title": "A Garden of Infinite Stars",
+    "author": "Yuki Tanaka",
+    "description": "A lyrical science fiction novel set across three generations of an interstellar farming family. As they terraform distant worlds, each generation must reconcile what it means to call a place home. Tender, vast, and quietly devastating.",
+    "category": "Story",
+    "available_quantity": 8,
+    "image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "9",
+    "title": "The Biology of Belief",
+    "author": "Dr. Priya Nair",
+    "description": "A groundbreaking look at how our cells respond to thought, emotion, and environment. Drawing on epigenetics and cell biology, Dr. Nair argues that our DNA is not our destiny—and that consciousness itself may be the most powerful medicine.",
+    "category": "Science",
+    "available_quantity": 5,
+    "image_url": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "10",
+    "title": "Threads of the Web",
+    "author": "Felix Okafor",
+    "description": "A cyberpunk thriller following a teenage hacker in Lagos who uncovers a shadow internet controlled by rogue nation-states. Fast-paced, culturally rich, and technically grounded—a debut that heralds a bold new voice in speculative fiction.",
+    "category": "Tech",
+    "available_quantity": 6,
+    "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "11",
+    "title": "The River Remembers",
+    "author": "Amara Diallo",
+    "description": "A multigenerational family story set along the banks of the Niger River, spanning from precolonial times to the present day. Told through the voices of seven women, it is a testament to resilience, love, and the stories we carry in our blood.",
+    "category": "Story",
+    "available_quantity": 10,
+    "image_url": "https://images.unsplash.com/photo-1495640388908-05fa85288e61?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "12",
+    "title": "Origins: The Chemistry of Life",
+    "author": "Prof. Elena Vasquez",
+    "description": "How did life begin? Prof. Vasquez journeys from primordial oceans to modern lab experiments replicating life's origins. A thrilling scientific detective story that covers RNA worlds, hydrothermal vents, and the tantalizing possibility of life beyond Earth.",
+    "category": "Science",
+    "available_quantity": 4,
+    "image_url": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=600&fit=crop"
+  }
+]
