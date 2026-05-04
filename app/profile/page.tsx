@@ -79,7 +79,7 @@ export default function ProfilePage() {
 
         {/* Info */}
         <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(190px,1fr))", gap:10, marginBottom:"1rem" }}>
-          {[["👤","Name",u.name||"Not set"],["✉️","Email",u.email],["🛡","Status",u.emailVerified?"Verified ✓":"Unverified"],["📅","Joined",joined]].map(([ic,l,v])=>(
+          {[["✉️","Email",u.email],["🛡","Status",u.emailVerified?"Verified ✓":"Unverified"],["📅","Joined",joined]].map(([ic,l,v])=>(
             <div key={String(l)} className="glass" style={{ borderRadius:10, padding:".9rem 1rem" }}>
               <div style={{fontSize:"1.1rem",marginBottom:4}}>{ic}</div>
               <div style={{color:"var(--c-faint)",fontSize:".68rem",textTransform:"uppercase",letterSpacing:".06em",marginBottom:2}}>{l}</div>
