@@ -108,7 +108,7 @@ function BooksContent() {
               <>
                 <p style={{color:"var(--c-faint)",fontSize:".8rem",marginBottom:"1rem"}}>
                   Showing <span style={{color:"#a78bfa",fontWeight:600}}>{filtered.length}</span> result{filtered.length!==1?"s":""}
-                  {search && <> for <em style={{color:"var(--c-text)"}}> "{search}"</em></>}
+                  {search && <> for <em style={{color:"var(--c-text)"}}> &#34;{search}&#34;</em></>}
                   {cat!=="All" && <> in <span style={{color:"#06b6d4"}}>{cat}</span></>}
                 </p>
                 <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(190px,1fr))", gap:18 }}>
