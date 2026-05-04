@@ -225,7 +225,61 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* ════════ TESTIMONIALS ════════ */}
+            <section className="section" style={{ background: "var(--c-surface)", borderTop: "1px solid var(--c-border)", borderBottom: "1px solid var(--c-border)" }}>
+                <div className="wrap">
+                    <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+                        <span className="label" style={{ color: "#06b6d4" }}>What Readers Say</span>
+                        <h2 className="serif" style={{ fontSize: "clamp(1.6rem,3.5vw,2.4rem)", fontWeight: 700, color: "var(--c-text)" }}>Reader Stories</h2>
+                    </div>
+                    <Swiper modules={[Pagination,Autoplay]} spaceBetween={20} slidesPerView={1}
+                            pagination={{ clickable: true }} autoplay={{ delay: 5000, disableOnInteraction: false }}
+                            breakpoints={{ 640:{ slidesPerView:1 }, 768:{ slidesPerView:2 }, 1024:{ slidesPerView:3 } }}
+                            style={{ paddingBottom: 48 }}>
+                        {REVIEWS.map((r, i) => (
+                            <SwiperSlide key={i}>
+                                <div className="card" style={{ padding: "1.5rem" }}>
+                                    <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
+                                        <div className="grad-bg" style={{ width: 40, height: 40, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: 700, fontSize: "1rem", flexShrink: 0 }}>{r.avatar}</div>
+                                        <div style={{ flex: 1 }}>
+                                            <p style={{ color: "var(--c-text)", fontWeight: 600, fontSize: ".875rem" }}>{r.name}</p>
+                                            <p style={{ color: "var(--c-muted)", fontSize: ".75rem" }}>{r.role}</p>
+                                        </div>
+                                        <span style={{ color: "#f59e0b", fontSize: ".82rem" }}>{"★".repeat(r.stars)}</span>
+                                    </div>
+                                    <p style={{ color: "var(--c-muted)", fontSize: ".85rem", lineHeight: 1.7, fontStyle: "italic" }}>&#34;{r.text}&#34;</p>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+            </section>
 
+            {/* ════════ CTA ════════ */}
+            <section className="section">
+                <div className="wrap">
+                    <div style={{
+                        position: "relative", borderRadius: 20, overflow: "hidden",
+                        padding: "clamp(2.5rem,6vw,4.5rem) clamp(1.5rem,5vw,4rem)",
+                        textAlign: "center",
+                        background: "radial-gradient(ellipse 100% 120% at 50% 0%, rgba(79,57,246,.22) 0%, transparent 70%), var(--c-surface)",
+                        border: "1px solid var(--c-border-purple)",
+                    }}>
+                        <h2 className="serif" style={{ fontSize: "clamp(1.7rem,4vw,2.6rem)", fontWeight: 700, color: "var(--c-text)", marginBottom: "1rem" }}>
+                            Start Reading Today
+                        </h2>
+                        <p style={{ color: "var(--c-muted)", fontSize: ".95rem", maxWidth: 460, margin: "0 auto 2rem", lineHeight: 1.75 }}>
+                            Join thousands of readers who have already discovered their next favorite book on BoiGhor. It&apos;s free to get started.
+                        </p>
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
+                            <button onClick={() => router.push(smartHref)} className="btn btn-fill" style={{ padding: ".8rem 2rem" }}>
+                                {session?.user ? "Go to Library" : "Create Free Account"}
+                            </button>
+                            <Link href="/books" className="btn btn-ghost" style={{ padding: ".8rem 1.75rem" }}>Browse Books</Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <style>{`
         @media (max-width: 820px) {
