@@ -157,7 +157,7 @@ export default function Home() {
 
                         {/* Right — Floating cover */}
                         <div className="hide-mobile floats" style={{ position: "relative", flexShrink: 0 }}>
-                            <div style={{ width: 240, height: 320, borderRadius: 18, overflow: "hidden", border: "1px solid rgba(79,57,246,.35)", boxShadow: "0 40px 80px rgba(0,0,0,.55)", transform: "rotate(-3deg)" }}>
+                            <div style={{ width: 440, height: 420, borderRadius: 18, overflow: "hidden", border: "1px solid rgba(79,57,246,.35)", boxShadow: "0 40px 80px rgba(0,0,0,.55)", transform: "rotate(0deg)" }}>
                                 <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=640&fit=crop" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(0deg,rgba(9,9,15,.8) 0%,transparent 55%)" }} />
                                 <div style={{ position: "absolute", bottom: "1rem", left: "1rem", right: "1rem" }}>
@@ -170,7 +170,7 @@ export default function Home() {
                                 <div className="grad-text" style={{ fontSize: ".95rem", fontWeight: 800 }}>4.9 ★</div>
                                 <div style={{ fontSize: ".68rem", color: "var(--c-muted)" }}>Top Rated</div>
                             </div>
-                            <div className="glass" style={{ position: "absolute", bottom: -16, left: -20, borderRadius: 10, padding: "8px 12px" }}>
+                            <div className="glass" style={{ position: "absolute", bottom: -28, left: -20, borderRadius: 10, padding: "8px 12px" }}>
                                 <div style={{ fontSize: ".7rem", fontWeight: 700, color: "#06b6d4" }}>📖 New Arrival</div>
                                 <div style={{ fontSize: ".67rem", color: "var(--c-muted)", marginTop: 2 }}>12 books this week</div>
                             </div>
