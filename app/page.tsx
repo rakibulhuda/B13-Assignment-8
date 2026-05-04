@@ -270,7 +270,7 @@ export default function Home() {
                                         </div>
                                         <span style={{ color: "#f59e0b", fontSize: ".82rem" }}>{"★".repeat(r.stars)}</span>
                                     </div>
-                                    <p style={{ color: "var(--c-muted)", fontSize: ".85rem", lineHeight: 1.7, fontStyle: "italic" }}>"{r.text}"</p>
+                                    <p style={{ color: "var(--c-muted)", fontSize: ".85rem", lineHeight: 1.7, fontStyle: "italic" }}>&#34;{r.text}&#34;</p>
                                 </div>
                             </SwiperSlide>
                         ))}
