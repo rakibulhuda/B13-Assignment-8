@@ -168,6 +168,63 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* ════════ MARQUEE ════════ */}
+            <div className="marquee-outer">
+                <div className="marquee-inner">
+                    {[...MARQUEE, ...MARQUEE].map((t, i) => (
+                        <span key={i} className="marquee-item">
+              <span className="dot" />
+                            {t}
+            </span>
+                    ))}
+                </div>
+            </div>
+
+
+
+            {/* ════════ STATS ════════ */}
+            <section className="section-sm" style={{ background: "var(--c-surface)", borderTop: "1px solid var(--c-border)", borderBottom: "1px solid var(--c-border)" }}>
+                <div className="wrap">
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))", gap: 16 }}>
+                        <StatCard value={1200} suffix="+" label="Books Available" icon="📚" delay={0} />
+                        <StatCard value={35000} suffix="+" label="Active Readers" icon="👥" delay={0.1} />
+                        <StatCard value={3} suffix="" label="Categories" icon="🗂" delay={0.2} />
+                        <StatCard value={99} suffix="%" label="Uptime" icon="⚡" delay={0.3} />
+                    </div>
+                </div>
+            </section>
+
+            {/* ════════ CATEGORIES ════════ */}
+            <section className="section">
+                <div className="wrap">
+                    <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+                        <span className="label" style={{ color: "#f59e0b" }}>Browse by Genre</span>
+                        <h2 className="serif" style={{ fontSize: "clamp(1.6rem,3.5vw,2.4rem)", fontWeight: 700, color: "var(--c-text)" }}>Explore Categories</h2>
+                    </div>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 20 }}>
+                        {[
+                            { cat:"Story",  color:"#f59e0b", icon:"📖", desc:"Timeless narratives and worlds that stay with you long after the last page.", n:4 },
+                            { cat:"Tech",   color:"#06b6d4", icon:"💻", desc:"From algorithms to AI — books shaping the digital future we're building.", n:4 },
+                            { cat:"Science",color:"#a78bfa", icon:"🔬", desc:"Unravel the mysteries of the cosmos, life, and everything in between.", n:4 },
+                        ].map(({ cat, color, icon, desc, n }) => (
+                            <Link key={cat} href={`/books?category=${cat}`} style={{ textDecoration: "none" }}>
+                                <div className="card" style={{ padding: "1.75rem", height: "100%", transition: "all .25s" }}
+                                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = color; (e.currentTarget as HTMLElement).style.transform = "translateY(-5px)"; }}
+                                     onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--c-border)"; (e.currentTarget as HTMLElement).style.transform = "none"; }}>
+                                    <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>{icon}</div>
+                                    <h3 style={{ fontSize: "1.15rem", fontWeight: 700, color, marginBottom: 8 }}>{cat}</h3>
+                                    <p style={{ color: "var(--c-muted)", fontSize: ".85rem", lineHeight: 1.65, marginBottom: "1.25rem" }}>{desc}</p>
+                                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                                        <span style={{ fontSize: ".75rem", fontWeight: 600, color: "var(--c-faint)" }}>{n} titles</span>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
 
 
             <style>{`
