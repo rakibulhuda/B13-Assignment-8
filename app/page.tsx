@@ -180,7 +180,30 @@ export default function Home() {
                 </div>
             </div>
 
+            {/* ════════ FEATURED BOOKS ════════ */}
+            <section className="section">
+                <div className="wrap">
+                    <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "2.5rem", gap: "1rem", flexWrap: "wrap" }}>
+                        <div>
+                            <span className="label" style={{ color: "var(--c-primary)" }}>Curated for You</span>
+                            <h2 className="serif" style={{ fontSize: "clamp(1.6rem,3.5vw,2.4rem)", fontWeight: 700, color: "var(--c-text)" }}>Featured Books</h2>
+                        </div>
+                        <Link href="/books" className="btn btn-ghost" style={{ padding: ".55rem 1.2rem", fontSize: ".85rem" }}>
+                            View All →
+                        </Link>
+                    </div>
 
+                    {loading ? (
+                        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(210px,1fr))", gap: 20 }}>
+                            {[...Array(4)].map((_,i) => <div key={i} className="shimmer" style={{ height: 300 }} />)}
+                        </div>
+                    ) : (
+                        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(210px,1fr))", gap: 20 }}>
+                            {books.map((b, i) => <BookCard key={b.id} book={b} index={i} />)}
+                        </div>
+                    )}
+                </div>
+            </section>
 
             {/* ════════ STATS ════════ */}
             <section className="section-sm" style={{ background: "var(--c-surface)", borderTop: "1px solid var(--c-border)", borderBottom: "1px solid var(--c-border)" }}>
@@ -247,7 +270,7 @@ export default function Home() {
                                         </div>
                                         <span style={{ color: "#f59e0b", fontSize: ".82rem" }}>{"★".repeat(r.stars)}</span>
                                     </div>
-                                    <p style={{ color: "var(--c-muted)", fontSize: ".85rem", lineHeight: 1.7, fontStyle: "italic" }}>&#34;{r.text}&#34;</p>
+                                    <p style={{ color: "var(--c-muted)", fontSize: ".85rem", lineHeight: 1.7, fontStyle: "italic" }}>"{r.text}"</p>
                                 </div>
                             </SwiperSlide>
                         ))}
